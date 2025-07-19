@@ -1,4 +1,5 @@
 "use client"
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import * as React from "react"
 import { cn } from "../../lib/utils"
@@ -63,10 +64,11 @@ const TabsTrigger = React.forwardRef<HTMLButtonElement, TabsTriggerProps>(
     const [currentValue, setCurrentValue] = React.useState("")
 
     React.useEffect(() => {
-      if (props.value !== undefined) {
-        setCurrentValue(props.value as string)
+      const propsValue = (props as any).value
+      if (propsValue !== undefined) {
+        setCurrentValue(propsValue as string)
       }
-    }, [props.value])
+    }, [props])
 
     const isActive = currentValue === value
 
@@ -99,10 +101,11 @@ const TabsContent = React.forwardRef<HTMLDivElement, TabsContentProps>(
     const [currentValue, setCurrentValue] = React.useState("")
 
     React.useEffect(() => {
-      if (props.value !== undefined) {
-        setCurrentValue(props.value as string)
+      const propsValue = (props as any).value
+      if (propsValue !== undefined) {
+        setCurrentValue(propsValue as string)
       }
-    }, [props.value])
+    }, [props])
 
     if (currentValue !== value) {
       return null
