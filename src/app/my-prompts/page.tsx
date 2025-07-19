@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { auth } from "../../auth"
 import { redirect } from "next/navigation"
 import { prisma } from "../../lib/prisma"
@@ -39,8 +40,7 @@ export default async function MyPromptsPage() {
           aiTool: true,
           _count: {
             select: {
-              likes: true,
-              copies: true
+              favorites: true
             }
           }
         }

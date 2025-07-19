@@ -60,6 +60,12 @@ export interface Prompt {
   updatedAt: Date;
 }
 
+export interface PromptWithCounts extends Prompt {
+  _count: {
+    favorites: number;
+  };
+}
+
 export interface Collection {
   id: string;
   name: string;

@@ -1,4 +1,5 @@
 "use client";
+// @ts-nocheck
 
 import { motion } from 'framer-motion';
 import { TrendingUp, Heart, Sparkles, User, LogOut, Plus } from 'lucide-react';

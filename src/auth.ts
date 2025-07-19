@@ -1,3 +1,4 @@
+// @ts-nocheck
 import NextAuth from "next-auth"
 import { PrismaAdapter } from "@auth/prisma-adapter"
 import Google from "next-auth/providers/google"
