@@ -72,9 +72,9 @@ export function Header() {
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" className="relative h-8 w-8 rounded-full">
                     <Avatar className="h-8 w-8">
-                      <AvatarImage src={session.user.image || ""} alt={session.user.name || ""} />
+                      <AvatarImage src={session.user?.image || ""} alt={session.user?.name || ""} />
                       <AvatarFallback>
-                        {session.user.name?.charAt(0) || session.user.email?.charAt(0) || "U"}
+                        {session.user?.name?.charAt(0) || session.user?.email?.charAt(0) || "U"}
                       </AvatarFallback>
                     </Avatar>
                   </Button>
@@ -82,9 +82,9 @@ export function Header() {
                 <DropdownMenuContent className="w-56" align="end" forceMount>
                   <div className="flex items-center justify-start gap-2 p-2">
                     <div className="flex flex-col space-y-1 leading-none">
-                      <p className="font-medium">{session.user.name}</p>
+                      <p className="font-medium">{session.user?.name}</p>
                       <p className="w-[200px] truncate text-sm text-muted-foreground">
-                        {session.user.email}
+                        {session.user?.email}
                       </p>
                     </div>
                   </div>
