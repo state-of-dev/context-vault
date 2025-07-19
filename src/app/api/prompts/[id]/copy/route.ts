@@ -34,10 +34,11 @@ export async function POST(
     })
 
     // Registrar la copia (opcional, para analytics)
-    await prisma.promptCopy.create({
+    await prisma.userActivity.create({
       data: {
         promptId: id,
-        userId: session.user.id
+        userId: session.user.id,
+        type: 'copy'
       }
     })
 

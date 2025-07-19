@@ -20,8 +20,7 @@ export default async function ProfilePage() {
         include: {
           _count: {
             select: {
-              likes: true,
-              copies: true
+              favorites: true
             }
           }
         }

@@ -20,8 +20,7 @@ export default async function MyPromptsPage() {
       aiTool: true,
       _count: {
         select: {
-          likes: true,
-          copies: true
+          favorites: true
         }
       }
     },
@@ -29,7 +28,7 @@ export default async function MyPromptsPage() {
   })
 
   // Obtener prompts favoritos del usuario
-  const favoritePrompts = await prisma.favoritePrompt.findMany({
+  const favoritePrompts = await prisma.favorite.findMany({
     where: { userId: session.user.id },
     include: {
       prompt: {

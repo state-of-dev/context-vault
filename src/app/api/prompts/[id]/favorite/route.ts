@@ -24,7 +24,7 @@ export async function POST(
     }
 
     // Verificar si ya está en favoritos
-    const existingFavorite = await prisma.favoritePrompt.findUnique({
+    const existingFavorite = await prisma.favorite.findUnique({
       where: {
         userId_promptId: {
           userId: session.user.id,
@@ -38,7 +38,7 @@ export async function POST(
     }
 
     // Agregar a favoritos
-    await prisma.favoritePrompt.create({
+    await prisma.favorite.create({
       data: {
         userId: session.user.id,
         promptId: id
@@ -65,7 +65,7 @@ export async function DELETE(
     const { id } = await params
 
     // Remover de favoritos
-    await prisma.favoritePrompt.delete({
+    await prisma.favorite.delete({
       where: {
         userId_promptId: {
           userId: session.user.id,
